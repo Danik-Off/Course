@@ -25,17 +25,17 @@
 		</div>
 		<div class="product_gallery">
 			<div class="product_gallery_photos">
-				<img class="product_photo1">
-				<img class="product_photo2">
+				<img class="product_photo1" src="images/image_1.png">
+				<img class="product_photo2" src="images/image_1.png">
 			</div>
 			<div class="product_slider">
 				<div class="product_selectedPhotos">
-					<img class="product_selected1">
-					<img class="product_selected2">
+					<img class="product_selected1" src="images/image_1.png">
+					<img class="product_selected2" src="images/image_1.png">
 				</div>
 				<div class="product_inactive">
-					<img class="product_inactive1">
-					<img class="product_inactive2">
+					<img class="product_inactive1" src="images/image_1.png">
+					<img class="product_inactive2" src="images/image_1.png">
 				</div>
 			</div>
 		</div>
@@ -44,10 +44,15 @@
 
 <style lang="scss">
 .product {
+
 	background: #FFFFFF;
+	display: inline-flex;
+	flex-direction: row-reverse;
+	gap: 64px;
+	padding-top: 32px;
+	
 
 	.product_content {
-
 
 		.product_header {
 
@@ -204,7 +209,153 @@
 
 		}
 
+	}
 
+	.product_gallery{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 0px;
+		gap: 24px;
+
+		.product_gallery_photos{
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			padding: 0px;
+			gap: 16px;
+
+			flex: none;
+			order: 0;
+			flex-grow: 0;
+
+			.product_photo1{
+				width: 436px;
+				height: 560px;
+				flex: none;
+				order: 0;
+				align-self: stretch;
+				flex-grow: 1;
+			}
+
+			.product_photo2{
+				width: 436px;
+				height: 560px;
+				flex: none;
+				order: 0;
+				align-self: stretch;
+				flex-grow: 1;
+			}
+
+
+
+		}
+
+		.product_slider{
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			padding: 0px;
+			gap: 16px;
+
+			width: 296px;
+			height: 88px;
+			flex: none;
+			order: 1;
+			flex-grow: 0;
+
+			.product_selectedPhotos{
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				padding: 0px;
+				gap: 16px;
+
+				width: 140px;
+				height: 88px;
+				border: 2px solid #0D1421;
+				flex: none;
+				order: 0;
+				flex-grow: 0;
+
+				.product_selected1{
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					padding: 0px;
+					gap: 10px;
+
+					width: 62px;
+					height: 88px;
+
+					flex: none;
+					order: 0;
+					flex-grow: 0;
+				}
+
+				.product_selected2{
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					padding: 0px;
+					gap: 10px;
+
+					width: 62px;
+					height: 88px;
+
+					flex: none;
+					order: 1;
+					flex-grow: 0;
+				}
+			}
+
+			.product_inactive{
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				padding: 0px;
+				gap: 16px;
+
+				width: 140px;
+				height: 88px;
+
+				flex: none;
+				order: 1;
+				flex-grow: 0;
+
+				.product_inactive1{
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					padding: 0px;
+					gap: 10px;
+
+					width: 62px;
+					height: 88px;
+					flex: none;
+					order: 0;
+					flex-grow: 0;
+				}
+
+				.product_inactive2{
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					padding: 0px;
+					gap: 10px;
+
+					width: 62px;
+					height: 88px;
+					flex: none;
+					order: 0;
+					flex-grow: 0;
+				}
+			}
+		}
 
 
 	}
