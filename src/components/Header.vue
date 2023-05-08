@@ -26,6 +26,7 @@ nav{
 
   div{
     display: flex;
+    align-items: flex-end;
     a{
       display: flex;
     text-decoration: none;
