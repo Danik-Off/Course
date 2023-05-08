@@ -1,5 +1,5 @@
 <template>
-	<div class="main">
+	<div class="product">
 		<div class="product_content">
 			<div class="product_header">
 				<div class="product_heading">
@@ -37,9 +37,7 @@
 </template>
 
 <style lang="scss">
-	.main {
+	.product {
 		background: #FFFFFF;
-
-		
 	}
 </style>
