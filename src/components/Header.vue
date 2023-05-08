@@ -1,13 +1,9 @@
 <script>
 import { RouterLink } from 'vue-router'
-export default {
-  
-}
 </script>
 <template>
   <header>
     <div class="back"></div>
-
     <nav>
       <ul class="menu">
         <hr />
