@@ -61,7 +61,14 @@
 						
 					}
 					.product_support_text{
-						
+						color: rgba(102.00000151991844, 112.000000923872, 133.00000727176666, 1);
+    					width: 288px;
+    					height: 30px;
+    					left: 0px;
+    					top: 40px;
+    					font-family: Inter;
+    					text-align: left;
+    					font-size: 20px;
 					}
 				}
 			}
