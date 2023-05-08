@@ -1,13 +1,13 @@
 <template>
   <div class="cardItem">
-    <img src="images/image_1.png" />
-    <span class="price">30 000 руб</span>
+    <img v-bind:src="imgUrl" />
+    <span class="price">{{ price }} руб</span>
     <div>
       <div>
-        <label>Бренд</label>
-        <span>Каменный остров</span>
+        <label>Бренд  </label>
+        <span>{{brand}}</span>
       </div>
-      <label>Жилет с нашивкой компасом</label>
+      <label>{{ shortDescription }}</label>
     </div>
   </div>
 </template>
@@ -27,18 +27,24 @@
     width: 100%;
   }
   .price{
-   margin: 1em 0;
+   margin: 1.5ex 0;
     font-family: 'Inter';
 font-style: normal;
-font-size: large;
-    label
-    {
-
-    }
+font-size:x-large;
+   
 
   }
 }
+label
+{
+  font-family: 'Inter';
+  font-style: normal;
+
+  color: #667085;
+}
 </style>
 <script>
-export default {};
+export default {
+  props:["brand","imgUrl","price","description","specification"]
+};
 </script>
