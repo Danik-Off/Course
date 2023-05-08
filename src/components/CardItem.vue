@@ -7,7 +7,7 @@
         <label>Бренд  </label>
         <span>{{brand}}</span>
       </div>
-      <label>{{ shortDescription }}</label>
+      <label>{{ specification }}</label>
     </div>
   </div>
 </template>
@@ -18,7 +18,6 @@
   background-color: rgba(255, 255, 255, 1);
   color: black;
   width: 20em;
-  height: 30em;
   padding: 0;
   margin: 0;
   img {

@@ -11,11 +11,14 @@ import { RouterLink } from "vue-router";
         <RouterLink   to="/:id"><img src="../assets/cart.svg"/></RouterLink>
       </div>
     </nav>
+    
   </header>
 </template>
 <style lang="scss">
+
+
 nav{
-  border-bottom: 1px solid black;
+ 
   text-decoration: none;
   display: flex;
      justify-content: space-between;
@@ -57,8 +60,8 @@ nav{
   text-decoration: none;
     }
   }
-  
- 
 }
+ 
+
 
 </style>
