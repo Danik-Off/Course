@@ -39,7 +39,5 @@
 <style lang="scss">
 	.product {
 		background: #FFFFFF;
-
-		
 	}
 </style>
