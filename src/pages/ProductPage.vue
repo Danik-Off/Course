@@ -1,7 +1,24 @@
 <script>
-
-
-
+import Api from "../Api";
+import router from "../router";
+export default {
+  data() {
+	return {
+    product: {},
+	}
+  },
+  created() {
+    this.load();
+  },
+  methods: {
+    load() {
+      
+      const api = new Api();
+      this.product = api.getById(this.$route.params.id)[0];
+	  console.log(this.product);
+    },
+  },
+};
 </script>
 
 
