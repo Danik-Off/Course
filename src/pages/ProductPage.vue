@@ -26,14 +26,14 @@
 					<span>Выберите размер</span>
 					<img src="public/Icon.svg">
 				</div>
-				<!-- <ul class="product_sizeList">
+				 <ul class="product_sizeList">
 					<li><span>XS</span><img></li>
 					<li><span>S</span><img></li>
 					<li><span>M</span><img></li>
 					<li><span>L</span><img></li>
 					<li><span>XL</span><img></li>
 					<li><span>XXL</span><img></li>
-				</ul> -->
+				</ul> 
 				<button class="product_addToCart"><span>Добавить в корзину</span></button>
 			</div>
 		</div>
@@ -42,17 +42,17 @@
 		
 		<div class="product_gallery">
 			<div class="product_gallery_photos">
-				<img class="product_photo1" src="images/image_1.png">
-				<img class="product_photo2" src="images/image_1.png">
+				<img class="product_photo1" src="public/images/image_1.png">
+				<img class="product_photo2" src="public/images/image_1.png">
 			</div>
 			<div class="product_slider">
 				<div class="product_selectedPhotos">
-					<img class="product_selected1" src="images/image_1.png">
-					<img class="product_selected2" src="images/image_1.png">
+					<img class="product_selected1" src="public/images/image_1.png">
+					<img class="product_selected2" src="public/images/image_1.png">
 				</div>
 				<div class="product_inactive">
-					<img class="product_inactive1" src="images/image_1.png">
-					<img class="product_inactive2" src="images/image_1.png">
+					<img class="product_inactive1" src="public/images/image_1.png">
+					<img class="product_inactive2" src="public/images/image_1.png">
 				</div>
 			</div>
 		</div>
@@ -65,12 +65,15 @@
 	background: #FFFFFF;
 	display: inline-flex;
 	flex-direction: row-reverse;
+	align-items:flex-start;
 	gap: 4em;
 	padding-top: 2em;
-	align-items: center;
-	justify-content: center;
+	
+	justify-content: space-around;
 
 	.product_content {
+
+		
 
 		.product_header {
 
@@ -215,28 +218,27 @@
 				padding: 0.375em;
 				gap: 0.25em;
 
-				position: absolute;
-				width: 320px;
-				height: 248px;
-				left: 1112px;
-				top: 446px;
+				
+				width: 20em;
+				//height: 15.5em;
+				//display: none;
 
 				background: #FFFFFF;
 				box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
-				border-radius: 8px;
+				border-radius: 0.5em;
 
 				li{
 					display: flex;
 					flex-direction: row;
 					align-items: center;
-					padding: 6px 16px;
-					gap: 8px;
+					padding: 0.375em 1em;
+					gap: 0.5em;
 
-					width: 308px;
-					height: 36px;
+					width: 19.25em;
+					height: 2.25em;
 
 					background: #FFFFFF;
-					border-radius: 6px;
+					border-radius: 0.375em;
 
 					flex: none;
 					order: 2;
@@ -258,19 +260,20 @@
 				border-bottom-left-radius: 0.5em;
 				border-bottom-right-radius: 0.5em;
 
+				//display: none;
+
 				span {
 					color: rgba(255, 255, 255, 1);
-					width: 160px;
-					height: 24px;
-					left: 22px;
-					top: 12px;
+					width: 10em;
+					height: 1.5em;
+					left: 1.375em;
+					top: 0.75em;
 					text-align: left;
-					font-size: 16px;
+					font-size: 1.20em;
 					font-family: 'Inter';
 					font-style: normal;
 					font-weight: 600;
-					font-size: 16px;
-					line-height: 24px;
+					line-height: 1.5em;
 				}
 			}
 
