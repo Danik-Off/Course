@@ -21,7 +21,6 @@ export default {
 };
 </script>
 
-
 <template>
 	<div class="product">
 		<div class="product_content">
