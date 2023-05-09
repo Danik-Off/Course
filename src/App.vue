@@ -35,7 +35,7 @@ import Footer from './components/Footer.vue';
     margin-right:auto ;
   }
   footer{
-    position: absolute;
+    
     bottom: 0;
   }
 }
