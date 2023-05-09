@@ -1,5 +1,5 @@
 <script>
-	
+
 
 
 </script>
@@ -26,10 +26,20 @@
 					<span>Выберите размер</span>
 					<img src="public/Icon.svg">
 				</div>
+				<!-- <ul class="product_sizeList">
+					<li><span>XS</span><img></li>
+					<li><span>S</span><img></li>
+					<li><span>M</span><img></li>
+					<li><span>L</span><img></li>
+					<li><span>XL</span><img></li>
+					<li><span>XXL</span><img></li>
+				</ul> -->
 				<button class="product_addToCart"><span>Добавить в корзину</span></button>
 			</div>
-
 		</div>
+		
+		
+		
 		<div class="product_gallery">
 			<div class="product_gallery_photos">
 				<img class="product_photo1" src="images/image_1.png">
@@ -55,8 +65,8 @@
 	background: #FFFFFF;
 	display: inline-flex;
 	flex-direction: row-reverse;
-	gap: 64px;
-	padding-top: 32px;
+	gap: 4em;
+	padding-top: 2em;
 	align-items: center;
 	justify-content: center;
 
@@ -67,8 +77,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
-			padding: 0px;
-			gap: 40px;
+			gap: 2.5em;
 
 			flex: none;
 			order: 0;
@@ -79,78 +88,69 @@
 				display: flex;
 				flex-direction: column;
 				align-items: flex-start;
-				padding: 0px;
 
-				width: 288px;
-				height: 70px;
+				width: 18em;
+				height: 4.375em;
 				flex: none;
 				order: 0;
 				flex-grow: 0;
 
 				.product_name {
 					color: rgba(53.00000064074993, 65.0000037252903, 83.00000265240669, 1);
-					width: 288px;
-					height: 40px;
-					font-family: Inter;
+					width: 18em;
+					height: 2.5em;
 					text-align: left;
-					font-size: 32px;
+					font-size: 2em;
 					letter-spacing: 0;
 
 					font-family: 'Inter';
 					font-style: normal;
 					font-weight: 600;
-					font-size: 32px;
-					line-height: 40px;
+					font-size: 2em;
+					line-height: 100%;
 
 				}
 
 				.product_support_text {
 					color: rgba(102.00000151991844, 112.000000923872, 133.00000727176666, 1);
-					width: 288px;
-					height: 30px;
-					left: 0px;
-					top: 40px;
-					font-family: Inter;
+					width: 18em;
+					height: 1.875em;
+					top: 2.5em;
 					text-align: left;
-					font-size: 20px;
+					font-size: 1.25em;
 					font-family: 'Inter';
 					font-style: normal;
 					font-weight: 400;
-					font-size: 20px;
-					line-height: 30px;
+					line-height: 100%;
 				}
 			}
 
 			.product_description {
 				color: rgba(102.00000151991844, 112.000000923872, 133.00000727176666, 1);
-				width: 648px;
-				height: 60px;
-				top: 110px;
-				font-family: Inter;
+				width: 40.5em;
+				height: 3.75em;
+				top: 6.875em;
 				text-align: left;
-				font-size: 20px;
 
 				font-family: 'Inter';
 				font-style: normal;
 				font-weight: 400;
-				font-size: 20px;
-				line-height: 30px;
+				font-size: 1.25em;
+				line-height: 150%;
 			}
 
 			.product_price {
 				color: rgba(13.174998834729195, 19.762502051889896, 32.93749898672104, 1);
-				width: 648px;
-				height: 48px;
-				top: 210px;
-				font-family: Inter;
+				width: 40.5em;
+				height: 1.75em;
+				top: 13.125em;
 				text-align: left;
-				font-size: 36px;
 
 				font-family: 'Inter';
 				font-style: normal;
 				font-weight: 600;
-				font-size: 36px;
-				line-height: 48px;
+				font-size: 2.25em;
+				line-height: 150%;
 			}
 		}
 
@@ -159,8 +159,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
-			padding: 0px;
-			gap: 16px;
+			gap: 1em;
 
 			flex: none;
 			order: 1;
@@ -173,17 +172,17 @@
 				flex-direction: row;
 				justify-content: center;
 				align-items: center;
-				padding: 12px 16px;
-				gap: 8px;
+				padding: 0.75em 1em;
+				gap: 0.5em;
 				border: 1px solid #EAECF0;
-				border-radius: 8px;
+				border-radius: 0.5em;
 				background-color: rgba(255, 255, 255, 1);
-				width: 204px;
-				height: 48px;
-				border-top-left-radius: 8px;
-				border-top-right-radius: 8px;
-				border-bottom-left-radius: 8px;
-				border-bottom-right-radius: 8px;
+				width: 12.75em;
+				height: 3em;
+				border-top-left-radius: 0.5em;
+				border-top-right-radius: 0.5em;
+				border-bottom-left-radius: 0.5em;
+				border-bottom-right-radius: 0.5em;
 				align-items: center;
 				justify-content: center;
 				margin-top: 32px;
@@ -199,31 +198,65 @@
 					font-family: 'Inter';
 					font-style: normal;
 					font-weight: 600;
-					font-size: 16px;
-					line-height: 24px;
+					font-size: 1em;
+					line-height: 1.5em;
 					
-					font-family: Inter;
 					text-align: left;
-					font-size: 16px;
 				}
-
-				label {}
-
 
 
 
 			}
 
+			.product_sizeList{
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				padding: 0.375em;
+				gap: 0.25em;
+
+				position: absolute;
+				width: 320px;
+				height: 248px;
+				left: 1112px;
+				top: 446px;
+
+				background: #FFFFFF;
+				box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+				border-radius: 8px;
+
+				li{
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					padding: 6px 16px;
+					gap: 8px;
+
+					width: 308px;
+					height: 36px;
+
+					background: #FFFFFF;
+					border-radius: 6px;
+
+					flex: none;
+					order: 2;
+					align-self: stretch;
+					flex-grow: 0;
+
+
+				}
+			}
+
 			.product_addToCart {
 
 				background-color: rgba(13.174998834729195, 19.762502051889896, 32.93749898672104, 1);
-				width: 204px;
-				height: 48px;
-				top: 64px;
-				border-top-left-radius: 8px;
-				border-top-right-radius: 8px;
-				border-bottom-left-radius: 8px;
-				border-bottom-right-radius: 8px;
+				width: 15.25em;
+				height: 4em;
+				top: 4em;
+				border-top-left-radius: 0.5em;
+				border-top-right-radius: 0.5em;
+				border-bottom-left-radius: 0.5em;
+				border-bottom-right-radius: 0.5em;
 
 				span {
 					color: rgba(255, 255, 255, 1);
@@ -231,7 +264,6 @@
 					height: 24px;
 					left: 22px;
 					top: 12px;
-					font-family: Inter;
 					text-align: left;
 					font-size: 16px;
 					font-family: 'Inter';
