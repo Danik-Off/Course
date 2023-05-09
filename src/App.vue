@@ -20,6 +20,7 @@ import Footer from './components/Footer.vue';
 #content
 {
   display: block;
+  position: relative;
   height: 100%;
   width: 100%;
   
@@ -32,6 +33,10 @@ import Footer from './components/Footer.vue';
     max-width: 1920px;
     margin-left:auto ;
     margin-right:auto ;
+  }
+  footer{
+    
+    bottom: 0;
   }
 }
 

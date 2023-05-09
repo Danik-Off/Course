@@ -1,5 +1,5 @@
 <template>
-  <div class="cardItem" :on-click="onClick">
+  <div class="cardItem" :id="id" @click="onClick">
     <div class="image">
       <img v-bind:src="imgUrl" />
 
@@ -81,6 +81,6 @@ label {
 </style>
 <script>
 export default {
-  props: ["brand", "imgUrl", "price", "description", "specification","onClick"],
+  props: ["id","brand", "imgUrl", "price", "description", "specification","onClick"],
 };
 </script>

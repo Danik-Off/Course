@@ -12,7 +12,7 @@ const router = createRouter({
       component: ListingPage
     },
     {
-      path: '/product',
+      path: '/product/:id',
       name: 'product',
       component: ProductPage
     }
