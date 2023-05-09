@@ -14,7 +14,7 @@ export default {
     load() {
       
       const api = new Api();
-      this.product = api.getById(this.$route.params.id);
+      this.product = api.getById(this.$route.params.id)[0];
 	  console.log(this.product);
     },
   },
