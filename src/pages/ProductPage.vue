@@ -1,3 +1,10 @@
+<script>
+	
+
+
+</script>
+
+
 <template>
 	<div class="product">
 		<div class="product_content">
@@ -17,7 +24,7 @@
 			<div class="product_action">
 				<div class="product_dropdownSize">
 					<span>Выберите размер</span>
-					<label></label>
+					<img src="public/Icon.svg">
 				</div>
 				<button class="product_addToCart"><span>Добавить в корзину</span></button>
 			</div>
@@ -51,6 +58,7 @@
 	gap: 64px;
 	padding-top: 32px;
 	align-items: center;
+	justify-content: center;
 
 	.product_content {
 
@@ -88,6 +96,12 @@
 					font-size: 32px;
 					letter-spacing: 0;
 
+					font-family: 'Inter';
+					font-style: normal;
+					font-weight: 600;
+					font-size: 32px;
+					line-height: 40px;
+
 				}
 
 				.product_support_text {
@@ -99,6 +113,11 @@
 					font-family: Inter;
 					text-align: left;
 					font-size: 20px;
+					font-family: 'Inter';
+					font-style: normal;
+					font-weight: 400;
+					font-size: 20px;
+					line-height: 30px;
 				}
 			}
 
@@ -110,6 +129,12 @@
 				font-family: Inter;
 				text-align: left;
 				font-size: 20px;
+
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 30px;
 			}
 
 			.product_price {
@@ -120,6 +145,12 @@
 				font-family: Inter;
 				text-align: left;
 				font-size: 36px;
+
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 600;
+				font-size: 36px;
+				line-height: 48px;
 			}
 		}
 
@@ -155,7 +186,7 @@
 				border-bottom-right-radius: 8px;
 				align-items: center;
 				justify-content: center;
-
+				margin-top: 32px;
 				flex: none;
 				order: 0;
 				align-self: stretch;
@@ -203,6 +234,11 @@
 					font-family: Inter;
 					text-align: left;
 					font-size: 16px;
+					font-family: 'Inter';
+					font-style: normal;
+					font-weight: 600;
+					font-size: 16px;
+					line-height: 24px;
 				}
 			}
 
