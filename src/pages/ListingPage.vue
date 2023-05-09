@@ -14,6 +14,38 @@ export default {
             "Инновации и функциональность находятся в приоритете у Каменного острова, о чем свидетельствует этот жилет",
           specification: "Жилет с нашивкой компасом ",
         },
+        {
+          imgUrl: "images/image_1.png",
+          brand: "Каменный остров",
+          price: "30000",
+          description:
+            "Инновации и функциональность находятся в приоритете у Каменного острова, о чем свидетельствует этот жилет",
+          specification: "Жилет с нашивкой компасом ",
+        },
+        {
+          imgUrl: "images/image_1.png",
+          brand: "Каменный остров",
+          price: "30000",
+          description:
+            "Инновации и функциональность нnnnnnnnnnnnnnnnnnnn nnnnnnnn nnnn nnn nnnnnnn nnnnnnnnnn nnnnnnnnnn  \n\rаходятся в приоритете у Каменного острова, о чем свидетельствует этот жилет",
+          specification: "Жилет с нашивкой компасом ",
+        },
+        {
+          imgUrl: "images/image_1.png",
+          brand: "Каменный остров",
+          price: "30000",
+          description:
+            "Инновации и функциональность находятся в приоритете у Каменного острова, о чем свидетельствует этот жилет",
+          specification: "Жилет с нашивкой компасом ",
+        },
+        {
+          imgUrl: "images/image_1.png",
+          brand: "Каменный остров",
+          price: "30000",
+          description:
+            "Инновации и функциональность находятся в приоритете у Каменного острова, о чем свидетельствует этот жилет",
+          specification: "Жилет с нашивкой компасом ",
+        },
       ],
     };
   },
@@ -37,7 +69,8 @@ export default {
 #cardsProducts {
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: center;
+  padding-left: 0;
   li {
     list-style: none;
     margin: 1em;

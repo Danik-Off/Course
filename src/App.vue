@@ -21,11 +21,15 @@ import Footer from './components/Footer.vue';
 {
   display: block;
   height: 100%;
+  width: 100%;
+  
   hr{
     max-width: none;
+    margin: 0;
   }
-  *{
-    max-width: 1600px;
+  .main,header,footer{
+    padding: 0 4em;
+    max-width: 1920px;
     margin-left:auto ;
     margin-right:auto ;
   }
