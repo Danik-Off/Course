@@ -12,9 +12,10 @@ export default {
   },
   methods: {
     load() {
-      console.log(this.$route.params.id);
+      
       const api = new Api();
-      this.product = api.getById();
+      this.product = api.getById(this.$route.params.id);
+	  console.log(this.product);
     },
   },
 };
