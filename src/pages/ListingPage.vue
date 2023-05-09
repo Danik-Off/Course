@@ -10,10 +10,42 @@ export default {
           imgUrl: "images/image_1.png",
           brand: "Каменный остров",
           price: "30000",
-          description: "Инновации и функциональность находятся в приоритете у Каменного острова, о чем свидетельствует этот жилет",
-          specification:"Жилет с нашивкой компасом "
+          description:
+            "Инновации и функциональность находятся в приоритете у Каменного острова, о чем свидетельствует этот жилет",
+          specification: "Жилет с нашивкой компасом ",
         },
-        
+        {
+          imgUrl: "images/image_1.png",
+          brand: "Каменный остров",
+          price: "30000",
+          description:
+            "Инновации и функциональность находятся в приоритете у Каменного острова, о чем свидетельствует этот жилет",
+          specification: "Жилет с нашивкой компасом ",
+        },
+        {
+          imgUrl: "images/image_1.png",
+          brand: "Каменный остров",
+          price: "30000",
+          description:
+            "Инновации и функциональность нnnnnnnnnnnnnnnnnnnn nnnnnnnn nnnn nnn nnnnnnn nnnnnnnnnn nnnnnnnnnn  \n\rаходятся в приоритете у Каменного острова, о чем свидетельствует этот жилет",
+          specification: "Жилет с нашивкой компасом ",
+        },
+        {
+          imgUrl: "images/image_1.png",
+          brand: "Каменный остров",
+          price: "30000",
+          description:
+            "Инновации и функциональность находятся в приоритете у Каменного острова, о чем свидетельствует этот жилет",
+          specification: "Жилет с нашивкой компасом ",
+        },
+        {
+          imgUrl: "images/image_1.png",
+          brand: "Каменный остров",
+          price: "30000",
+          description:
+            "Инновации и функциональность находятся в приоритете у Каменного острова, о чем свидетельствует этот жилет",
+          specification: "Жилет с нашивкой компасом ",
+        },
       ],
     };
   },
@@ -23,7 +55,13 @@ export default {
 <template>
   <ul id="cardsProducts">
     <li v-for="card in cards">
-      <CardItem :imgUrl="card.imgUrl" :brand="card.brand" :specification="card"></CardItem>
+      <CardItem
+        :imgUrl="card.imgUrl"
+        :brand="card.brand"
+        :specification="card.specification"
+        :price="card.price"
+        :description="card.description"
+      ></CardItem>
     </li>
   </ul>
 </template>
@@ -31,7 +69,8 @@ export default {
 #cardsProducts {
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: center;
+  padding-left: 0;
   li {
     list-style: none;
     margin: 1em;

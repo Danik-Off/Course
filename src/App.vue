@@ -7,13 +7,32 @@ import Footer from './components/Footer.vue';
 <template>
   <div id="content">
   <Header></Header>
+  <hr>
   <div class="main">
     <RouterView />
   </div>
-  <footer/>
+  
+  <Footer/>
 </div>
 </template>
 
 <style scoped lang="scss">
+#content
+{
+  display: block;
+  height: 100%;
+  width: 100%;
+  
+  hr{
+    max-width: none;
+    margin: 0;
+  }
+  .main,header,footer{
+    padding: 0 4em;
+    max-width: 1920px;
+    margin-left:auto ;
+    margin-right:auto ;
+  }
+}
 
 </style>
