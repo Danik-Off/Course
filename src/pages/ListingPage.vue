@@ -1,5 +1,6 @@
 <script>
 import CardItem from "../components/CardItem.vue";
+import router from '../router';
 import Api from "../Api.js"
 export default {
 
@@ -10,6 +11,7 @@ export default {
       cards:[]
     };
   },
+  
   beforeMount(){console.log("test");this.loadCards()},
   components: { CardItem },
   methods: {
@@ -22,7 +24,7 @@ export default {
         {
           const productCard = e.currentTarget;
           console.log("open product id:"+productCard.id);
-            
+          router.push({ name: 'product', params: { id: productCard.id } })
         }
     }
 
