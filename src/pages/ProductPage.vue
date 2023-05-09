@@ -41,7 +41,7 @@ export default {
 			<div class="product_action">
 				<div class="product_dropdownSize">
 					<span>Выберите размер</span>
-					<img src="public/Icon.svg">
+					<img src="Icon.svg">
 				</div>
 				 <ul class="product_sizeList">
 					<li><span>XS</span><img></li>
@@ -59,17 +59,17 @@ export default {
 		
 		<div class="product_gallery">
 			<div class="product_gallery_photos">
-				<img class="product_photo1" src="public/images/image_1.png">
-				<img class="product_photo2" src="public/images/image_1.png">
+				<img class="product_photo1" src="image_1.png">
+				<img class="product_photo2" src="image_1.png">
 			</div>
 			<div class="product_slider">
 				<div class="product_selectedPhotos">
-					<img class="product_selected1" src="public/images/image_1.png">
-					<img class="product_selected2" src="public/images/image_1.png">
+					<img class="product_selected1" src="image_1.png">
+					<img class="product_selected2" src="image_1.png">
 				</div>
 				<div class="product_inactive">
-					<img class="product_inactive1" src="public/images/image_1.png">
-					<img class="product_inactive2" src="public/images/image_1.png">
+					<img class="product_inactive1" src="image_1.png">
+					<img class="product_inactive2" src="image_1.png">
 				</div>
 			</div>
 		</div>
@@ -179,7 +179,7 @@ export default {
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
-			gap: 1em;
+			//gap: 1em;
 
 			flex: none;
 			order: 1;
@@ -229,11 +229,12 @@ export default {
 			}
 
 			.product_sizeList{
-				display: flex;
+				display: none;
 				flex-direction: column;
 				align-items: flex-start;
 				padding: 0.375em;
-				gap: 0.25em;
+				margin-top: 0px;
+				//gap: 0.25em;
 
 				
 				width: 20em;
@@ -248,7 +249,7 @@ export default {
 					display: flex;
 					flex-direction: row;
 					align-items: center;
-					padding: 0.375em 1em;
+					padding: 0.2em 1em;
 					gap: 0.5em;
 
 					width: 19.25em;
@@ -262,8 +263,13 @@ export default {
 					align-self: stretch;
 					flex-grow: 0;
 
-
 				}
+
+				li:hover{
+					background: #F2F4F7;
+					
+				}
+				
 			}
 
 			.product_addToCart {
@@ -276,6 +282,7 @@ export default {
 				border-top-right-radius: 0.5em;
 				border-bottom-left-radius: 0.5em;
 				border-bottom-right-radius: 0.5em;
+				margin-top: 1em;
 
 				//display: none;
 
