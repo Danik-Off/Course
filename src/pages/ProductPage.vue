@@ -2,8 +2,10 @@
 import Api from "../Api";
 import router from "../router";
 export default {
-  data: {
+  data() {
+	return {
     product: {},
+	}
   },
   created() {
     this.load();
@@ -12,7 +14,7 @@ export default {
     load() {
       console.log(this.$route.params.id);
       const api = new Api();
-      product = api.getById();
+      this.product = api.getById();
     },
   },
 };
