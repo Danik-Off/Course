@@ -50,7 +50,7 @@
 	flex-direction: row-reverse;
 	gap: 64px;
 	padding-top: 32px;
-	
+	align-items: center;
 
 	.product_content {
 
