@@ -1,10 +1,21 @@
 <script>
 import Api from "../Api";
 import router from "../router";
+
 export default {
   data() {
 	return {
     product: {},
+	showList: false,
+	sizeSelected: null,
+	sizeList: [
+		'XS', 
+		'S', 
+		'M', 
+		'L', 
+		'XL', 
+		'XLL'
+	]
 	}
   },
   created() {
@@ -17,8 +28,22 @@ export default {
       this.product = api.getById(this.$route.params.id)[0];
 	  console.log(this.product);
     },
+
+	showOnClick(){
+		this.showList = !this.showList;
+	},
+
+	selectSizeOnClick(e){
+		const id = e.target.id;
+		//this.sizeSelected = this.sizeList[id];
+		this.sizeSelected = id;
+		console.log(id, this.sizeList[id]);
+	}
+
   },
 };
+
+
 </script>
 
 <template>
@@ -38,19 +63,37 @@ export default {
 				</span>
 			</div>
 			<div class="product_action">
-				<div class="product_dropdownSize">
+				<div class="product_dropdownSize" 
+					v-on:click="showOnClick"
+					v-bind:style="{background: showList ? '#F2F4F7' : '#FFFFFF'}"
+				>
 					<span>Выберите размер</span>
-					<img src="Icon.svg">
+					<img src="Icon_arrow.svg"
+						v-bind:style="{transform: showList ? 'rotate(3.142rad)' : ''}"
+					>
 				</div>
-				 <ul class="product_sizeList">
-					<li><span>XS</span><img></li>
-					<li><span>S</span><img></li>
-					<li><span>M</span><img></li>
-					<li><span>L</span><img></li>
-					<li><span>XL</span><img></li>
-					<li><span>XXL</span><img></li>
+				 <ul v-if="showList" class="product_sizeList">
+					<li v-for="value, index in sizeList" 
+						v-on:click="selectSizeOnClick"
+						:id="index"
+					>
+						<span :id="index">{{value}}</span>
+						<div :id="index" class="product_checkbox"
+							v-show="sizeSelected == id"
+						>
+							<img  src="Icon_check.svg">
+						</div>
+
+					</li>
+
+					<!-- <li><span>XS</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li>
+					<li><span>S</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li>
+					<li><span>M</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li>
+					<li><span>L</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li>
+					<li><span>XL</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li>
+					<li><span>XXL</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li> -->
 				</ul> 
-				<button class="product_addToCart"><span>Добавить в корзину</span></button>
+				<button v-if="!showList" class="product_addToCart"><span>Добавить в корзину</span></button>
 			</div>
 		</div>
 		
@@ -189,13 +232,13 @@ export default {
 				box-sizing: border-box;
 				display: flex;
 				flex-direction: row;
-				justify-content: center;
+				justify-content: space-between;
 				align-items: center;
 				padding: 0.75em 1em;
 				gap: 0.5em;
 				border: 1px solid #EAECF0;
 				border-radius: 0.5em;
-				background-color: rgba(255, 255, 255, 1);
+				//background: #FFFFFF;
 				width: 12.75em;
 				height: 3em;
 				border-top-left-radius: 0.5em;
@@ -203,7 +246,6 @@ export default {
 				border-bottom-left-radius: 0.5em;
 				border-bottom-right-radius: 0.5em;
 				align-items: center;
-				justify-content: center;
 				margin-top: 32px;
 				flex: none;
 				order: 0;
@@ -228,7 +270,7 @@ export default {
 			}
 
 			.product_sizeList{
-				display: none;
+				display: flex;
 				flex-direction: column;
 				align-items: flex-start;
 				padding: 0.375em;
@@ -247,6 +289,7 @@ export default {
 				li{
 					display: flex;
 					flex-direction: row;
+					justify-content: space-between;
 					align-items: center;
 					padding: 0.2em 1em;
 					gap: 0.5em;
@@ -261,6 +304,29 @@ export default {
 					order: 2;
 					align-self: stretch;
 					flex-grow: 0;
+
+					.product_checkbox{
+						width: 16px;
+						height: 16px;
+
+						align-items: center;
+
+						display: none;
+
+						flex: none;
+						order: 1;
+						flex-grow: 0;
+						background: #0D1421;
+						border-radius: 999px;
+
+						img{
+							//align-self: center;
+							margin: 3px;
+							margin-top: 4px;
+    						display: block;
+							//border: 2px solid #FFFFFF;
+						}
+					}
 
 				}
 
