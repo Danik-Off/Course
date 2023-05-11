@@ -34,9 +34,9 @@ export default {
 	},
 
 	selectSizeOnClick(e){
-		const id = e.target.id;
+		const id = e.currentTarget.id;
 		//this.sizeSelected = this.sizeList[id];
-		this.sizeSelected = id;
+		this.sizeSelected =this.sizeList[id];
 		console.log(id, this.sizeList[id]);
 	}
 
@@ -74,12 +74,13 @@ export default {
 				</div>
 				 <ul v-if="showList" class="product_sizeList">
 					<li v-for="value, index in sizeList" 
-						v-on:click="selectSizeOnClick"
-						:id="index"
+					    :id="index"
+						@click="selectSizeOnClick"
+						
 					>
-						<span :id="index">{{value}}</span>
-						<div :id="index" class="product_checkbox"
-							v-show="sizeSelected == id"
+						<span >{{value}}</span>
+						<div  class="product_checkbox"
+							v-show="sizeSelected == value"
 						>
 							<img  src="Icon_check.svg">
 						</div>
@@ -311,7 +312,7 @@ export default {
 
 						align-items: center;
 
-						display: none;
+					
 
 						flex: none;
 						order: 1;
