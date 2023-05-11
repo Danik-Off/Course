@@ -28,7 +28,7 @@
 
   background-color: rgba(255, 255, 255, 1);
   color: #000000;
-  width: 19em;
+  width: 25em;
   padding: 0;
   margin: 0;
 
@@ -40,11 +40,15 @@
       bottom: 0;
       padding-bottom: 3em;
       width: 100%;
-      color: #000000;
+      color: #354153;
+      
       z-index: 0;
+      h2,p{
+        padding: 0 6%;
+      }
     }
     .backgroundInf {
-    
+      
       position: inherit;
       background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(10px);

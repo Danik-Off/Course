@@ -1,8 +1,11 @@
+<script>
+
+</script>
 <template>
-    <div class="bckMenu"></div>
     <div>
         
     </div>
 </template>
-<script>
-</script>
+<style>
+
+</style>

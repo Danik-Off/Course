@@ -48,9 +48,12 @@ export default function Api() {
     this.getById = (id)=>{
       return this.data.filter(item=>item.id==id);
     }
-    this.get = ()=>
+    this.get = (count)=>
     {
-        return this.data ;
+      if(count){
+        return this.data.slice(0,4);
+      }
+        return this.data;
     }
     this.getCart = ()=>{
       const data =JSON.parse(localStorage.getItem("cart"))

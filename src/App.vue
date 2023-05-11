@@ -1,10 +1,12 @@
 <script setup>
 import {RouterView } from 'vue-router';
-import Header from './components/header.vue'
+import Header from './components/Header.vue'
 import Footer from './components/Footer.vue';
+import Login from './components/Login.vue'
 </script>
 
 <template>
+  <Login></Login>
   <div id="content">
   <Header></Header>
   <hr>
