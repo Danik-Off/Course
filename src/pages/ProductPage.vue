@@ -44,6 +44,7 @@ export default {
 	{
 		const api = new Api();
 		api.addToCart(this.product.id,this.sizeSelected);
+		console.log(api.getCart());
 	}
 
   },
