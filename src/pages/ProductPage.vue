@@ -14,7 +14,7 @@ export default {
 		'M', 
 		'L', 
 		'XL', 
-		'XLL'
+		'XXL'
 	]
 	}
   },
@@ -79,7 +79,7 @@ export default {
 						v-bind:style="{transform: showList ? 'rotate(3.142rad)' : ''}"
 					>
 				</div>
-				 <ul v-if="showList" class="product_sizeList">
+				<ul v-if="showList" class="product_sizeList">
 					<li v-for="value, index in sizeList" 
 					    :id="index"
 						@click="selectSizeOnClick"
@@ -94,12 +94,6 @@ export default {
 
 					</li>
 
-					<!-- <li><span>XS</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li>
-					<li><span>S</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li>
-					<li><span>M</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li>
-					<li><span>L</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li>
-					<li><span>XL</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li>
-					<li><span>XXL</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li> -->
 				</ul> 
 				<button @click="addProductToCart" v-if="!showList" class="product_addToCart"><span>Добавить в корзину</span></button>
 			</div>
