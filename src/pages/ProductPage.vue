@@ -24,7 +24,7 @@ export default {
   methods: {
     load() {
       
-      const api = new Api();
+		const api = new Api();
       this.product = api.getById(this.$route.params.id)[0];
 	  console.log(this.product);
     },
@@ -34,10 +34,17 @@ export default {
 	},
 
 	selectSizeOnClick(e){
-		const id = e.target.id;
+		const id = e.currentTarget.id;
 		//this.sizeSelected = this.sizeList[id];
-		this.sizeSelected = id;
-		console.log(id, this.sizeList[id]);
+		this.sizeSelected =this.sizeList[id];
+		this.showList = !this.showList;
+	}
+	,
+	addProductToCart()
+	{
+		const api = new Api();
+		api.addToCart(this.product.id,this.sizeSelected);
+		console.log(api.getCart());
 	}
 
   },
@@ -67,19 +74,20 @@ export default {
 					v-on:click="showOnClick"
 					v-bind:style="{background: showList ? '#F2F4F7' : '#FFFFFF'}"
 				>
-					<span>Выберите размер</span>
+					<span>{{sizeSelected?sizeSelected:"Выберите размер"}}</span>
 					<img src="Icon_arrow.svg"
 						v-bind:style="{transform: showList ? 'rotate(3.142rad)' : ''}"
 					>
 				</div>
 				 <ul v-if="showList" class="product_sizeList">
 					<li v-for="value, index in sizeList" 
-						v-on:click="selectSizeOnClick"
-						:id="index"
+					    :id="index"
+						@click="selectSizeOnClick"
+						
 					>
-						<span :id="index">{{value}}</span>
-						<div :id="index" class="product_checkbox"
-							v-show="sizeSelected == id"
+						<span >{{value}}</span>
+						<div  class="product_checkbox"
+							v-show="sizeSelected == value"
 						>
 							<img  src="Icon_check.svg">
 						</div>
@@ -93,7 +101,7 @@ export default {
 					<li><span>XL</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li>
 					<li><span>XXL</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li> -->
 				</ul> 
-				<button v-if="!showList" class="product_addToCart"><span>Добавить в корзину</span></button>
+				<button @click="addProductToCart" v-if="!showList" class="product_addToCart"><span>Добавить в корзину</span></button>
 			</div>
 		</div>
 		
@@ -311,7 +319,7 @@ export default {
 
 						align-items: center;
 
-						display: none;
+					
 
 						flex: none;
 						order: 1;

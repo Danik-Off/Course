@@ -5,7 +5,6 @@ import { RouterLink } from "vue-router";
   <header>
     <nav>
       <RouterLink   to="/"  ><img src="/Vector.svg"/><span>Курсовой проект</span></RouterLink>
-      <RouterLink   to="/product"  ><span>Тоооооооо</span></RouterLink>
       <div >
         <RouterLink   to="/Login"><img src="../assets/login.svg"/></RouterLink>
         <RouterLink   to="/:id"><img src="../assets/cart.svg"/></RouterLink>
