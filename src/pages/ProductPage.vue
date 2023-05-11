@@ -24,7 +24,7 @@ export default {
   methods: {
     load() {
       
-      const api = new Api();
+		const api = new Api();
       this.product = api.getById(this.$route.params.id)[0];
 	  console.log(this.product);
     },
@@ -37,7 +37,13 @@ export default {
 		const id = e.currentTarget.id;
 		//this.sizeSelected = this.sizeList[id];
 		this.sizeSelected =this.sizeList[id];
-		console.log(id, this.sizeList[id]);
+		this.showList = !this.showList;
+	}
+	,
+	addProductToCart()
+	{
+		const api = new Api();
+		api.addToCart(this.product.id,this.sizeSelected);
 	}
 
   },
@@ -67,7 +73,7 @@ export default {
 					v-on:click="showOnClick"
 					v-bind:style="{background: showList ? '#F2F4F7' : '#FFFFFF'}"
 				>
-					<span>Выберите размер</span>
+					<span>{{sizeSelected?sizeSelected:"Выберите размер"}}</span>
 					<img src="Icon_arrow.svg"
 						v-bind:style="{transform: showList ? 'rotate(3.142rad)' : ''}"
 					>
@@ -94,7 +100,7 @@ export default {
 					<li><span>XL</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li>
 					<li><span>XXL</span><div class="product_checkbox"><img src="Icon_check.svg"></div></li> -->
 				</ul> 
-				<button v-if="!showList" class="product_addToCart"><span>Добавить в корзину</span></button>
+				<button @click="addProductToCart" v-if="!showList" class="product_addToCart"><span>Добавить в корзину</span></button>
 			</div>
 		</div>
 		
