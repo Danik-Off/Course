@@ -1,18 +1,12 @@
 <script>
     export default {
-        props: ["showOnClick", "returnSize"],
+        props: ["array", "caller", "item"],
         data() {
             return {
             showList: false,
-            sizeSelected: null,
-            sizeList: [
-                'XS', 
-                'S', 
-                'M', 
-                'L', 
-                'XL', 
-                'XXL'
-            ]
+            selected: null,
+            list: array
+                //['XS','S','M','L','XL','XXL']
             }
         },
 
@@ -24,40 +18,40 @@
 
             selectSizeOnClick(e){
                 const id = e.currentTarget.id;
-                //this.sizeSelected = this.sizeList[id];
-                this.sizeSelected =this.sizeList[id];
+                //this.selected = this.list[id];
+                this.selected =this.list[id];
                 this.showList = !this.showList;
                 this.returnSize(this.sizeSelected);
             },
        
-
+            
         },
     }
 </script>
 
 
 <template>
-    <ul v-if="showList" class="product_sizeList">
-        <li v-for="value, index in sizeList" 
+    <ul v-if="showList" class="dropdownList">
+        <item v-for="value, index in list" 
             :id="index"
             @click="selectSizeOnClick"
             
         >
             <span >{{value}}</span>
-            <div  class="product_checkbox"
+            <div  class="checkbox"
                 v-show="sizeSelected == value"
             >
                 <img  src="Icon_check.svg">
             </div>
 
-        </li>
+        </item>
 
     </ul> 
 </template>
 
 
 <style lang="scss">
-    .product_sizeList{
+    .dropdownList{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -93,7 +87,7 @@
             align-self: stretch;
             flex-grow: 0;
 
-            .product_checkbox{
+            .checkbox{
                 width: 16px;
                 height: 16px;
 
