@@ -53,7 +53,7 @@ export default function Api() {
         return this.data ;
     }
     this.getCart = ()=>{
-      const data = localStorage.getItem("cart")
+      const data =JSON.parse(localStorage.getItem("cart"))
       if(data)
       {
         return data;
