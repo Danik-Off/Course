@@ -5,14 +5,15 @@
             return {
             showList: false,
             selected: null,
-            list: array
+            list: this.array
                 //['XS','S','M','L','XL','XXL']
             }
         },
 
         methods: {
 
-            showOnClick(){
+            showOnClick(e){
+                if (e.currentTarget != this.caller) return;
                 this.showList = !this.showList;
             },
 
