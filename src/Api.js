@@ -52,9 +52,22 @@ export default function Api() {
     {
         return this.data ;
     }
-    this.getCart = ()=>{}
-    this.addToCart = ()=>{}
-    this.addToCart = ()=>{}
+    this.getCart = ()=>{
+      const data = localStorage.getItem("cart")
+      if(data)
+      {
+        return data;
+      }
+      return [];
+    }
+    this.addToCart = (id,size)=>{
+      const cartProducts = JSON.stringify([...this.getCart(),{id:Date.now(),productId:id,size:size}]);
+      localStorage.setItem("cart",cartProducts);
+    }
+    this.deleteFromCart = (id)=>{
+      const cartProducts = JSON.stringify(this.getCart().filter(i=>i!==id));
+      localStorage.setItem("cart",cartProducts);
+    }
     this.login = ()=>{}
 
 }
