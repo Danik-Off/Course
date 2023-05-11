@@ -12,8 +12,8 @@
 
         methods: {
 
-            showOnClick(e){
-                if (e.currentTarget != this.caller) return;
+            showOnClick(){
+                
                 this.showList = !this.showList;
             },
 
@@ -38,6 +38,7 @@
             @click="selectSizeOnClick"
             
         >
+        <div @click="showList">{{caller}}</div>
             <span >{{value}}</span>
             <div  class="checkbox"
                 v-show="sizeSelected == value"
