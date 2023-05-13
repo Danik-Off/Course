@@ -14,7 +14,7 @@ export default {
       showBrandFilter: false,
       showPriceFilter: false,
       selectedBrands: [],
-      selectedPrice: null,
+      selectedPrice: "По умолчанию",
     };
   },
   
@@ -56,6 +56,7 @@ export default {
           const priceID = e.currentTarget.id;
           this.selectedPrice = this.priceFilter[priceID];
           console.log(this.selectedPrice);
+          this.showPriceFilter = !this.showPriceFilter;
         },
 
         checkBrand(brandID){
@@ -79,7 +80,7 @@ export default {
     </div>
     
     <div @click="openPriceFilter" class="filter_price">
-      <span>По умолчанию</span>
+      <span>{{selectedPrice}}</span>
       <img src="product/Icon_arrow.svg">
     </div>
     
