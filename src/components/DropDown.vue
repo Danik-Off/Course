@@ -1,6 +1,6 @@
 <script>
     export default {
-        props: ["array", "caller", "item"],
+        props: ["array", "caller" ],
         data() {
             return {
             showList: false,
@@ -22,9 +22,14 @@
                 //this.selected = this.list[id];
                 this.selected =this.list[id];
                 this.showList = !this.showList;
-                this.returnSize(this.sizeSelected);
+                //this.returnSize(this.sizeSelected);
             },
-       
+            
+            initComponent(){
+                return Vue.component('button', {
+                    template: this.caller
+                })
+            }
             
         },
     }
@@ -32,13 +37,13 @@
 
 
 <template>
+    <div @click="showOnClick">{{caller}}</div>
     <ul v-if="showList" class="dropdownList">
-        <item v-for="value, index in list" 
+        <li v-for="value, index in list" 
             :id="index"
             @click="selectSizeOnClick"
             
         >
-        <div @click="showList">{{caller}}</div>
             <span >{{value}}</span>
             <div  class="checkbox"
                 v-show="sizeSelected == value"
@@ -46,7 +51,7 @@
                 <img  src="Icon_check.svg">
             </div>
 
-        </item>
+        </li>
 
     </ul> 
 </template>
