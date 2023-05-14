@@ -103,17 +103,17 @@ export default {
 		
 		<div class="product_gallery">
 			<div class="product_gallery_photos">
-				<img class="product_photo1" src="image_1.png">
-				<img class="product_photo2" src="image_1.png">
+				<img class="product_photo1" src="stone_island/image_1.png">
+				<img class="product_photo2" src="stone_island/image 5.png">
 			</div>
 			<div class="product_slider">
 				<div class="product_selectedPhotos">
 					<img class="product_selected1" src="image_1.png">
-					<img class="product_selected2" src="image_1.png">
+					<img class="product_selected2" src="stone_island/image 5.png">
 				</div>
 				<div class="product_inactive">
-					<img class="product_inactive1" src="image_1.png">
-					<img class="product_inactive2" src="image_1.png">
+					<img class="product_inactive1" src="stone_island/image 7.png">
+					<img class="product_inactive2" src="stone_island/image 9.png">
 				</div>
 			</div>
 		</div>
