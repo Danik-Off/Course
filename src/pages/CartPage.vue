@@ -64,8 +64,8 @@ export default {
         </ul>
       </div>
     </div>
-    <div v-else>
-      <ul id="cardsProducts" style="position: relative">
+    <div class="cartNotEmpty" v-else>
+      <ul class="cart_cardProducts" id="cardsProducts" style="position: relative">
         <li v-for="card in cartProducts">
           <CartItem
             :id="card.id"
@@ -78,7 +78,37 @@ export default {
           ></CartItem>
         </li>
       </ul>
-      <div class="v114_442">
+
+      <div class="cart_summary">
+        <div class="price_section">
+
+          <div class="cart_summary_price">
+            <span class="summary_heading">Итого</span>
+            <span class="summaryToPay">К оплате {{ summ }} руб</span>
+          </div>
+
+          <div v-for="card in cartProducts" class="cart_summary_item">
+            <span class="summary_item_specification">{{card.specification}}</span>
+            <span class="summary_item_price">{{ card.price }}</span>
+          </div>
+
+          <div class="cart_summary_item">
+            <span class="summary_item_specification">Доставка</span>
+            <span class="summary_item_price">750 руб</span>
+          </div>
+
+          <div class="cart_tips">
+            <span>Чтобы продолжить оформление заказа, необходимо</span>
+            <span class="cart_link_signIn">войти или зарегистрировать аккаунт</span>
+          </div>
+        </div>
+        
+
+      </div>
+
+
+
+      <!-- <div class="v114_442">
         <div class="v114_441">
           <div class="v114_440">
             <span class="v113_24">Итого</span
@@ -101,187 +131,167 @@ export default {
             >Чтобы продолжить оформление заказа, необходимо</span
           ><span class="v113_49">войти или зарегистрировать аккаунт</span>
         </div>
-      </div>
+      </div> -->
+
+
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.v114_442 {
-  width: 476px;
-  height: 320px;
-  background: url("../images/v114_442.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  margin: 72px;
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 1124px;
-  overflow: hidden;
-}
-.v114_441 {
-  width: 476px;
-  height: 200px;
-  background: url("../images/v114_441.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
-}
-.v114_440 {
-  width: 476px;
-  height: 88px;
-  background: url("../images/v114_440.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
-}
-.v113_24 {
-  width: 476px;
-  color: rgba(53, 65, 83, 1);
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 24px;
-  opacity: 1;
-  text-align: left;
-}
-.v113_29 {
-  width: 476px;
-  color: rgba(13, 19, 32, 1);
-  position: absolute;
-  top: 32px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Medium;
-  font-size: 24px;
-  opacity: 1;
-  text-align: left;
-}
-.v113_35 {
-  width: 476px;
-  height: 56px;
-  background: url("../images/v113_35.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  padding: 16px 0px;
-  opacity: 1;
-  position: absolute;
-  top: 88px;
-  left: 0px;
-  overflow: hidden;
-}
-.v113_32 {
-  width: 390px;
-  color: rgba(102, 112, 133, 1);
-  position: absolute;
-  top: 16px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 16px;
-  opacity: 1;
-  text-align: left;
-}
-.v113_34 {
-  width: 86px;
-  color: rgba(13, 19, 32, 1);
-  position: absolute;
-  top: 16px;
-  left: 390px;
-  font-family: Inter;
-  font-weight: Medium;
-  font-size: 16px;
-  opacity: 1;
-  text-align: left;
-}
-.v113_40 {
-  width: 476px;
-  height: 56px;
-  background: url("../images/v113_40.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  padding: 16px 0px;
-  opacity: 1;
-  position: absolute;
-  top: 144px;
-  left: 0px;
-  overflow: hidden;
-}
-.v113_41 {
-  width: 414px;
-  color: rgba(102, 112, 133, 1);
-  position: absolute;
-  top: 16px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 16px;
-  opacity: 1;
-  text-align: left;
-}
-.v113_42 {
-  width: 62px;
-  color: rgba(13, 19, 32, 1);
-  position: absolute;
-  top: 16px;
-  left: 414px;
-  font-family: Inter;
-  font-weight: Medium;
-  font-size: 16px;
-  opacity: 1;
-  text-align: left;
-}
-.v113_47 {
-  width: 476px;
-  height: 48px;
-  background: url("../images/v113_47.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 272px;
-  left: 0px;
-  overflow: hidden;
-}
-.v113_48 {
-  width: 476px;
-  color: rgba(102, 112, 133, 1);
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 16px;
-  opacity: 1;
-  text-align: left;
-}
-.v113_49 {
-  width: 295px;
-  color: rgba(53, 65, 83, 1);
-  position: absolute;
-  top: 24px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Medium;
-  font-size: 16px;
-  opacity: 1;
-  text-align: left;
-}
+
+  .cartNotEmpty{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0px;
+    gap: 24px;
+
+    .cart_cardProducts{
+      //display: flex;
+      //flex-direction: column;
+
+      width: 1100px;
+      height: 320px;
+      
+    }
+  }
+
+  .cart_summary{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 72px;
+
+    width: 476px;
+    //height: 320px;
+
+    .price_section{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0px;
+
+      width: 476px;
+      height: 200px;
+
+      .cart_summary_price{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px 0px 24px;
+        width: 476px;
+        height: 88px;
+        border-bottom: 1px solid #EAECF0;
+
+        .summary_heading{
+          width: 476px;
+          height: 32px;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 32px;
+          color: #354153;
+        }
+
+        .summaryToPay{
+          width: 476px;
+          height: 32px;
+
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 32px;
+
+          color: #0D1421;
+
+        }
+      }
+
+      .cart_summary_item{
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 16px 0px;
+
+        width: 476px;
+        height: 56px;
+
+        border-bottom: 1px solid #EAECF0;
+
+        .summary_item_specification{
+          width: 390px;
+          height: 24px;
+
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+
+          color: #667085;
+        }
+
+        .summary_item_price{
+          width: 86px;
+          height: 24px;
+
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+
+          color: #0D1421;
+        }
+      }
+
+      .cart_tips{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+  
+        width: 476px;
+        height: 48px;
+  
+        span{
+          width: 476px;
+          height: 24px;
+  
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+  
+          color: #667085;
+        }
+  
+        .cart_link_signIn{
+          width: 295px;
+          height: 24px;
+  
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+  
+          color: #354153;
+        }
+      }
+    }
+
+    
+  }
+
 </style>
