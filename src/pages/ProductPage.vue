@@ -18,10 +18,7 @@ export default {
 		],
 		
 		photos: [
-			'stone_island/image_1.png',
-			'stone_island/image 5.png',
-			'stone_island/image 7.png',
-			'stone_island/image 9.png'
+		
 		],
 		activePhotos:[],
 	}
@@ -35,6 +32,7 @@ export default {
       
 		const api = new Api();
       this.product = api.getById(this.$route.params.id)[0];
+	  this.photos = this.product.photos;
 	  console.log(this.product);
     },
 
@@ -58,7 +56,6 @@ export default {
 	selectPhotos(e){
 		const selected = e.currentTarget;
 	},
-	
 
   },
 };
@@ -71,15 +68,14 @@ export default {
 		<div class="product_content">
 			<div class="product_header">
 				<div class="product_heading">
-					<span class="product_name">Каменный остров</span>
-					<span class="product_support_text">Жилет с нашивкой компасом</span>
+					<span class="product_name">{{ product.brand}}</span>
+					<span class="product_support_text">{{product.specification}}</span>
 				</div>
 				<span class="product_description">
-					Инновации и функциональность находятся в приоритете у Каменного острова, о чем свидетельствует этот
-					жилет.
+					{{ product.description}}
 				</span>
 				<span class="product_price">
-					30 000 руб
+					{{ product.price }} руб
 				</span>
 			</div>
 			<div class="product_action">
@@ -88,7 +84,7 @@ export default {
 					v-bind:style="{background: showList ? '#F2F4F7' : '#FFFFFF'}"
 				>
 					<span>{{sizeSelected?sizeSelected:"Выберите размер"}}</span>
-					<img src="Icon_arrow.svg"
+					<img src="src/assets/Icon_arrow.svg"
 						v-bind:style="{transform: showList ? 'rotate(3.142rad)' : ''}"
 					>
 				</div>
@@ -96,13 +92,12 @@ export default {
 					<li v-for="value, index in sizeList" 
 					    :id="index"
 						@click="selectSizeOnClick"
-						
 					>
 						<span >{{value}}</span>
 						<div  class="product_checkbox"
 							v-show="sizeSelected == value"
 						>
-							<img  src="Icon_check.svg">
+							<img  src="src/assets/Icon_check.svg">
 						</div>
 
 					</li>

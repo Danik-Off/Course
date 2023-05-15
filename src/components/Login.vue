@@ -3,13 +3,13 @@
     <div class="modal">
         <div class="modal_header">
             <div class="receipt_icon">
-               <img src="src/assets/Icon_receipt.svg"> 
+               <img src="/src/assets/Icon_receipt.svg"> 
             </div>
             
             <span>Почти готово</span>
         </div>
         <div class="button_close" @click="showOnClick">
-            <img src="src/assets/Icon_x.svg">
+            <img src="/src/assets/Icon_x.svg">
         </div>
         <div class="modal_content">
             <div class="content_header">
