@@ -81,7 +81,7 @@ export default {
     
     <div @click="openPriceFilter" class="filter_price">
       <span>{{selectedPrice}}</span>
-      <img src="product/Icon_arrow.svg">
+      <img src="src\assets\Icon_arrow.svg">
     </div>
     
   </div>
@@ -98,7 +98,7 @@ export default {
         <div class="brand_checkbox"
           :style="{background: checkBrand(index)? '#0D1421':'#FFFFFF'}"
         >
-          <img src="product/Icon_check.svg">
+          <img src="src\assets\Icon_check.svg">
         </div>
         <span >{{value}}</span>
       </li>
