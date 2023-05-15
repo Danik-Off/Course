@@ -146,6 +146,7 @@ export default {
     align-items: flex-start;
     justify-content: space-between;
    
+
   }
 
   .cart_summary{

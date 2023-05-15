@@ -49,7 +49,6 @@
   top: 0px;
   z-index: 1;
   background: rgba(13, 20, 33, 0.4784313725);
-  justify-content: center;
   align-items: center;
   //opacity: 0.4;
 
