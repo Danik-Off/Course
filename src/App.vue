@@ -2,12 +2,15 @@
 import {RouterView } from 'vue-router';
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue';
-import Login from './components/Login.vue'
+import Login from './components/Login.vue';
+
+
 </script>
 
 <template>
-  <Login @click="Login.showOnClick"></Login>
+  
   <div id="content">
+    <Login @click="Login.showOnClick"></Login>
   <Header></Header>
   <hr>
   <div class="main">
