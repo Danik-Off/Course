@@ -5,21 +5,30 @@ import router from "../router";
 export default {
   data() {
 	return {
-    product: {},
-	showList: false,
-	sizeSelected: null,
-	sizeList: [
-		'XS', 
-		'S', 
-		'M', 
-		'L', 
-		'XL', 
-		'XXL'
-	]
+		product: {},
+		showList: false,
+		sizeSelected: null,
+		sizeList: [
+			'XS', 
+			'S', 
+			'M', 
+			'L', 
+			'XL', 
+			'XXL'
+		],
+		
+		photos: [
+			'stone_island/image_1.png',
+			'stone_island/image 5.png',
+			'stone_island/image 7.png',
+			'stone_island/image 9.png'
+		],
+		activePhotos:[],
 	}
   },
   created() {
     this.load();
+	this.activePhotos.push(this.photos[0], this.photos[1])
   },
   methods: {
     load() {
@@ -45,7 +54,11 @@ export default {
 		const api = new Api();
 		api.addToCart(this.product.id,this.sizeSelected);
 		console.log(api.getCart());
-	}
+	},
+	selectPhotos(e){
+		const selected = e.currentTarget;
+	},
+	
 
   },
 };
@@ -103,17 +116,17 @@ export default {
 		
 		<div class="product_gallery">
 			<div class="product_gallery_photos">
-				<img class="product_photo1" src="stone_island/image_1.png">
-				<img class="product_photo2" src="stone_island/image 5.png">
+				<img class="product_photo1" :src="activePhotos[0]">
+				<img class="product_photo2" :src="activePhotos[1]">
 			</div>
 			<div class="product_slider">
 				<div class="product_selectedPhotos">
-					<img class="product_selected1" src="image_1.png">
-					<img class="product_selected2" src="stone_island/image 5.png">
+					<img class="product_selected" :src="photos[0]">
+					<img class="product_selected" :src="photos[1]">
 				</div>
-				<div class="product_inactive">
-					<img class="product_inactive1" src="stone_island/image 7.png">
-					<img class="product_inactive2" src="stone_island/image 9.png">
+				<div class="product_inactive" >
+					<img class="product_inactive" :src="photos[2]">
+					<img class="product_inactive" :src="photos[3]">
 				</div>
 			</div>
 		</div>
@@ -440,7 +453,7 @@ export default {
 				order: 0;
 				flex-grow: 0;
 
-				.product_selected1{
+				.product_selected{
 					display: flex;
 					flex-direction: row;
 					justify-content: center;
@@ -456,21 +469,7 @@ export default {
 					flex-grow: 0;
 				}
 
-				.product_selected2{
-					display: flex;
-					flex-direction: row;
-					justify-content: center;
-					align-items: center;
-					padding: 0px;
-					gap: 10px;
-
-					width: 62px;
-					height: 88px;
-
-					flex: none;
-					order: 1;
-					flex-grow: 0;
-				}
+				
 			}
 
 			.product_inactive{
@@ -487,7 +486,7 @@ export default {
 				order: 1;
 				flex-grow: 0;
 
-				.product_inactive1{
+				.product_inactive{
 					display: flex;
 					flex-direction: row;
 					justify-content: center;
@@ -502,20 +501,7 @@ export default {
 					flex-grow: 0;
 				}
 
-				.product_inactive2{
-					display: flex;
-					flex-direction: row;
-					justify-content: center;
-					align-items: center;
-					padding: 0px;
-					gap: 10px;
-
-					width: 62px;
-					height: 88px;
-					flex: none;
-					order: 0;
-					flex-grow: 0;
-				}
+				
 			}
 		}
 

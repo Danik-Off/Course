@@ -6,7 +6,7 @@ import Login from './components/Login.vue'
 </script>
 
 <template>
-  <Login></Login>
+  <Login @click="Login.showOnClick"></Login>
   <div id="content">
   <Header></Header>
   <hr>

@@ -1,15 +1,15 @@
 <template>
-<div class="bg">
+<div v-if="showModal" class="bg">
     <div class="modal">
         <div class="modal_header">
             <div class="receipt_icon">
-               <img src="product/Icon_receipt.svg"> 
+               <img src="src/assets/Icon_receipt.svg"> 
             </div>
             
             <span>Почти готово</span>
         </div>
-        <div class="button_close">
-            <img src="product/Icon_x.svg">
+        <div class="button_close" @click="showOnClick">
+            <img src="src/assets/Icon_x.svg">
         </div>
         <div class="modal_content">
             <div class="content_header">
@@ -32,7 +32,7 @@
                 <span class="link_signup">Зарегистрироваться</span>
             </div>
         </div>
-        <button class="button_signin">Войти</button>
+        <button class="button_signin" @click="showOnClick">Войти</button>
     </div>
 </div>
 </template>
@@ -40,7 +40,7 @@
 <style lang="scss">
 .bg{
     
-    display: none;
+    display: block;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -302,6 +302,19 @@
 </style>
 
 <script>
+export default {
+    data(){
+        return{
+            showModal: true,
 
+        };
+    },
+
+    methods:{
+        showOnClick(){
+            this.showModal = !this.showModal;
+        },
+    },
+}
     
 </script>
