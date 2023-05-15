@@ -9,7 +9,7 @@
             <span>Почти готово</span>
         </div>
         <div class="button_close" @click="showOnClick">
-            <img src="/src/assets/Icon_x.svg">
+            <img src="src/assets/Icon_x.svg">
         </div>
         <div class="modal_content">
             <div class="content_header">
@@ -40,15 +40,16 @@
 <style lang="scss">
 .bg{
     
-    display: block;
+    display: flex;
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0px;
     top: 0px;
     z-index: 1;
-
-    background: #0d14217a;
+    background: rgba(13, 20, 33, 0.4784313725);
+    justify-content: center;
+    align-items: center;
     //opacity: 0.4;
 
     .modal{
@@ -60,11 +61,12 @@
         gap: 40px;
         isolation: isolate;
         
-        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        
         width: 510px;
         height: 612px;
-        left: 44.0625em;
-        top: 5.5em;
+      
         
         background: #FFFFFF;
         border-radius: 16px;
