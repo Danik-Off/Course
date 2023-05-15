@@ -24,6 +24,7 @@ export default {
 			'stone_island/image 9.png'
 		],
 		activePhotos:[],
+		selectedPhotos: "first"
 	}
   },
   created() {
@@ -35,6 +36,7 @@ export default {
       
 		const api = new Api();
       this.product = api.getById(this.$route.params.id)[0];
+	  this.photos = this.product.photos;
 	  console.log(this.product);
     },
 
@@ -56,7 +58,20 @@ export default {
 		console.log(api.getCart());
 	},
 	selectPhotos(e){
-		const selected = e.currentTarget;
+		this.selectedPhotos = e.currentTarget.id;
+		//console.log(this.selectedPhotos);
+
+		if (this.selectedPhotos == 'first')
+			this.activePhotos = [this.photos[0], this.photos[1]]
+		else
+			this.activePhotos = [this.photos[2], this.photos[3]]
+		// if (this.selectedPhotos == "first"){
+		// 	$( "#first" ).addClass( ".selected" );
+		// 	$( "#second" ).addClass( ".product_inactive" );
+		// } else{
+		// 	$( "#first" ).addClass( ".product_inactive" );
+		// 	$( "#second" ).addClass( ".product_selectedPhotos" );
+		// }
 	},
 	
 
@@ -71,15 +86,14 @@ export default {
 		<div class="product_content">
 			<div class="product_header">
 				<div class="product_heading">
-					<span class="product_name">Каменный остров</span>
-					<span class="product_support_text">Жилет с нашивкой компасом</span>
+					<span class="product_name">{{ product.brand}}</span>
+					<span class="product_support_text">{{product.specification}}</span>
 				</div>
 				<span class="product_description">
-					Инновации и функциональность находятся в приоритете у Каменного острова, о чем свидетельствует этот
-					жилет.
+					{{ product.description}}
 				</span>
 				<span class="product_price">
-					30 000 руб
+					{{ product.price }} руб
 				</span>
 			</div>
 			<div class="product_action">
@@ -88,7 +102,7 @@ export default {
 					v-bind:style="{background: showList ? '#F2F4F7' : '#FFFFFF'}"
 				>
 					<span>{{sizeSelected?sizeSelected:"Выберите размер"}}</span>
-					<img src="Icon_arrow.svg"
+					<img src="src/assets/Icon_arrow.svg"
 						v-bind:style="{transform: showList ? 'rotate(3.142rad)' : ''}"
 					>
 				</div>
@@ -102,7 +116,7 @@ export default {
 						<div  class="product_checkbox"
 							v-show="sizeSelected == value"
 						>
-							<img  src="Icon_check.svg">
+							<img  src="src/assets/Icon_check.svg">
 						</div>
 
 					</li>
@@ -116,17 +130,23 @@ export default {
 		
 		<div class="product_gallery">
 			<div class="product_gallery_photos">
-				<img class="product_photo1" :src="activePhotos[0]">
-				<img class="product_photo2" :src="activePhotos[1]">
+				<img class="product_photo" :src="activePhotos[0]">
+				<img class="product_photo" :src="activePhotos[1]">
 			</div>
 			<div class="product_slider">
-				<div class="product_selectedPhotos">
-					<img class="product_selected" :src="photos[0]">
-					<img class="product_selected" :src="photos[1]">
+				<div id="first" 
+					 :class="{selected: this.selectedPhotos=='first'? true:false}"
+					@click="selectPhotos"
+				>
+					<img :src="photos[0]">
+					<img :src="photos[1]">
 				</div>
-				<div class="product_inactive" >
-					<img class="product_inactive" :src="photos[2]">
-					<img class="product_inactive" :src="photos[3]">
+				<div id="second" 
+					:class="{selected: this.selectedPhotos=='second'? true:false}"
+					@click="selectPhotos"
+				>
+					<img :src="photos[2]">
+					<img :src="photos[3]">
 				</div>
 			</div>
 		</div>
@@ -404,16 +424,7 @@ export default {
 			order: 0;
 			flex-grow: 0;
 
-			.product_photo1{
-				width: 436px;
-				height: 560px;
-				flex: none;
-				order: 0;
-				align-self: stretch;
-				flex-grow: 1;
-			}
-
-			.product_photo2{
+			.product_photo{
 				width: 436px;
 				height: 560px;
 				flex: none;
@@ -439,7 +450,9 @@ export default {
 			order: 1;
 			flex-grow: 0;
 
-			.product_selectedPhotos{
+
+
+			#first{
 				display: flex;
 				flex-direction: row;
 				align-items: flex-start;
@@ -448,12 +461,12 @@ export default {
 
 				width: 140px;
 				height: 88px;
-				border: 2px solid #0D1421;
+				
 				flex: none;
 				order: 0;
 				flex-grow: 0;
 
-				.product_selected{
+				img{
 					display: flex;
 					flex-direction: row;
 					justify-content: center;
@@ -472,7 +485,11 @@ export default {
 				
 			}
 
-			.product_inactive{
+			.selected{
+				border: 2px solid #0D1421;
+			}
+
+			#second{
 				display: flex;
 				flex-direction: row;
 				align-items: flex-start;
@@ -486,7 +503,7 @@ export default {
 				order: 1;
 				flex-grow: 0;
 
-				.product_inactive{
+				img{
 					display: flex;
 					flex-direction: row;
 					justify-content: center;
