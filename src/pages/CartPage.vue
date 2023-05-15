@@ -145,17 +145,7 @@ export default {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 0px;
-    gap: 24px;
-
-    .cart_cardProducts{
-      //display: flex;
-      //flex-direction: column;
-
-      width: 1100px;
-      height: 320px;
-      
-    }
+   
   }
 
   .cart_summary{
@@ -164,9 +154,7 @@ export default {
     justify-content: space-between;
     align-items: flex-start;
     padding: 0px;
-    gap: 72px;
-
-    width: 476px;
+   
     //height: 320px;
 
     .price_section{
