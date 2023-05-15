@@ -18,10 +18,7 @@ export default {
 		],
 		
 		photos: [
-			'stone_island/image_1.png',
-			'stone_island/image 5.png',
-			'stone_island/image 7.png',
-			'stone_island/image 9.png'
+		
 		],
 		activePhotos:[],
 		selectedPhotos: "first"
@@ -73,7 +70,6 @@ export default {
 		// 	$( "#second" ).addClass( ".product_selectedPhotos" );
 		// }
 	},
-	
 
   },
 };
@@ -110,7 +106,6 @@ export default {
 					<li v-for="value, index in sizeList" 
 					    :id="index"
 						@click="selectSizeOnClick"
-						
 					>
 						<span >{{value}}</span>
 						<div  class="product_checkbox"
